@@ -1,0 +1,96 @@
+
+<div class="transaction-panel-container">
+    <div class="menu">
+      <h2>Transacciones</h2>
+      <button (click)="mostrarFormulario('depositoSucursal')">Depósito en sucursal</button>
+      <button (click)="mostrarFormulario('depositoCajero')">Depósito en cajero automático</button>
+      <button (click)="mostrarFormulario('depositoCuenta')">Depósito a otra cuenta</button>
+      <button (click)="mostrarFormulario('compraFisica')">Compra en establecimiento físico</button>
+      <button (click)="mostrarFormulario('compraWeb')">Compra en página web</button>
+      <button (click)="mostrarFormulario('retiroCajero')">Retiro en cajero</button>
+  
+      <h2>Consultas</h2>
+      <button (click)="getSaldoCuenta()">Consultar saldo</button>
+      <button (click)="getconsultarTransacciones()">Historial de transacciones</button>
+      <button (click)="cerrarSesion()">Cerrar Sesión</button>
+    </div>
+  
+    <div class="content">
+      <div class="header">
+        <img src="assets/logo-bancolombia-black.svg" alt="Logo Bancolombia" class="logo">
+        <div class="date-time">
+          <p>Fecha: {{ fechaActual }}</p>
+          <p>Hora: {{ horaActual }}</p>
+        </div>
+      </div>
+  
+      <h2 *ngIf="!formularioVisible && !mostrarResultadoSaldo && !mostrarResultadoTransacciones" >Bienvenido {{ state.userEmail$ | async }}</h2>
+      <p *ngIf="!formularioVisible && !mostrarResultadoSaldo && !mostrarResultadoTransacciones">Selecciona una opción del menú para comenzar.</p>
+
+        
+      <!-- Formulario dinámico -->
+      <div *ngIf="formularioVisible">
+        <h3>{{ tituloFormulario }}</h3>
+        <form  [formGroup]="formularioCuenta" (ngSubmit)="enviarFormulario()">
+            <label for="campo1">Cuenta</label>
+            <input formControlName="Cuenta"  type="number" id="campo1" name="campo1" required>
+            <label for="campo2">Monto</label>
+            <input formControlName="Monto"  type="number" id="campo2" name="campo2" required>
+            <div *ngIf="tituloFormulario === 'Depósito desde otra cuenta'">
+              <label for="campo3">Cuenta de Origen</label>
+              <input formControlName="CuentaOrigen" type="number" id="campo3" name="campo3" required />
+            </div>
+            <button type="submit">Enviar</button>
+            <button for="cerrar" (click)="ocultarFormulario()">Cerrar</button>
+        </form>      
+      </div>
+      <!-- Resultado de la consulta -->
+      <div *ngIf="mostrarResultadoSaldo">
+        <h3>Consulta</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Campo</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of resultadoConsulta">
+              <td>{{ item.key }}</td>
+              <td>{{ item.value | currency:'USD':'symbol':'1.2-2' }}</td>
+            </tr>
+            <tr *ngIf="errorConsulta">
+              <td>error</td>
+              <td>{{ errorConsulta }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button for="cerrar" (click)="ocultarConsulta()">Cerrar</button>
+      </div>
+      <div *ngIf="mostrarResultadoTransacciones">
+        <h3>Historial de Transacciones</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Transaccion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Mostrar el resultado si existe -->
+            <tr *ngFor="let item of resultadoConsulta">
+              <td>{{ item.key }}</td>
+              <td>{{ item.value }}</td>
+            </tr>
+            <!-- Mostrar el error si existe -->
+            <tr *ngIf="errorConsulta">
+              <td>Error</td>
+              <td>{{ errorConsulta }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button for="cerrar" (click)="ocultarConsulta()">Cerrar</button>
+      </div>
+
+    </div>
+  </div>

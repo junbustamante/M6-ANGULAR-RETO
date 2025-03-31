@@ -1,0 +1,29 @@
+<div class="auth-container">
+    <div class="auth-image">
+      <img src="/assets/imgPub.png" alt="Imagen de seguridad">
+    </div>
+    <div class="auth-form">
+      <div class="container-primary">
+        <form [formGroup]="loginForm" (ngSubmit)="submit()">
+          <h1>Bienvenido</h1>
+          <p>Por favor, ingresa tus credenciales para continuar</p>
+          <div class="input-box">
+            <input type="text" formControlName="username" placeholder="Usuario" required>
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <div class="input-box">
+            <input type="password" formControlName="password" placeholder="Contraseña" required>
+            <i class="bi bi-lock-fill"></i>
+          </div>
+          <div class="remember-forgot">
+            <label><input type="checkbox">Recordar</label>
+            <a href="#">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="btn" [disabled]="!loginForm.valid">Iniciar sesión</button>
+          <div class="register-link">
+            <p>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,299 @@
+.transaction-panel-container {
+    display: flex;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+  }
+  
+  .menu {
+    width: 300px;
+    background-color: #f4f4f9;
+    color: black;
+    padding: 20px;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .menu h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    font-weight: bold;
+    margin-top: 15px;
+  }
+  
+  .menu button {
+    width: 100%;
+    background-color: #fdda24;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .menu button:hover {
+    background-color: #fdda24;
+    transform: scale(1.05);
+  }
+  
+  .content {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinea el contenido al inicio (parte superior) */
+    align-items: center;
+    text-align: center;
+    position: relative; /* Permite posicionar elementos dentro del contenedor */
+}
+
+  
+  .content h2 {
+    margin-top: 100px;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+  }
+  
+  .content p {
+    font-size: 16px;
+    color: #555;
+  }
+
+  .footerHome{
+    margin-top: auto;
+    width: 100%;
+}
+.header {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 6%;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    padding: 10px 20px; 
+    background-color: #f4f4f9; 
+    border-bottom: 2px solid #ddd; 
+}
+
+.header .logo {
+    height: 50px; 
+}
+
+.header .date-time {
+    text-align: right; 
+    font-size: 14px; 
+    color: #555; 
+}
+
+.header .date-time p {
+    margin: 0; 
+}
+
+
+form {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px; /* Espaciado interno */
+  border: 2px solid #ccc; /* Borde del formulario */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+  position: relative; /* Asegura que el contenido interno no se salga del contenedor */
+  overflow: visible;
+}
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form label {
+    
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+  
+
+form h3 {
+  margin-top: 300px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+  z-index: 1;
+}
+
+form button,
+button[for="cerrar"] {
+    width: 100%; /* Asegura que ambos botones tengan el mismo ancho */
+    padding: 10px;
+    background-color: #fdda24; /* Color amarillo */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+  
+form button:hover,
+button[for="cerrar"]:hover {
+    background-color: #e6c200; 
+    transform: scale(1.05); 
+}
+
+form button:active,
+button[for="cerrar"]:active {
+    background-color: #cc9900; 
+    transform: scale(1);
+}
+  
+button[for="cerrar"] {
+  margin-top: 10px; 
+}
+
+/* Contenedor del resultado */
+div[ngIf="mostrarResultadoSaldo"] {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #007bff; /* Borde azul */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo gris claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+}
+
+/* Título del resultado */
+div[ngIf="mostrarResultadoSaldo"] h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Encabezado de la tabla */
+table th {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Texto blanco */
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd; /* Bordes */
+}
+
+/* Filas de la tabla */
+table td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Bordes */
+  text-align: left;
+  color: #555; /* Color del texto */
+}
+
+/* Filas alternadas */
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Fondo gris claro */
+}
+
+/* Efecto hover en las filas */
+table tr:hover {
+  background-color: #e6f7ff; /* Fondo azul claro */
+}
+
+/* Contenedor del resultado */
+div[ngIf="mostrarResultadoTransacciones"] {
+  margin-top: 20px;
+  padding: 20px;
+  border: 2px solid #007bff; /* Borde azul */
+  border-radius: 10px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo gris claro */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+}
+
+/* Título del resultado */
+div[ngIf="mostrarResultadoTransacciones"] h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Encabezado de la tabla */
+table th {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Texto blanco */
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd; /* Bordes */
+}
+
+/* Filas de la tabla */
+table td {
+  padding: 10px;
+  border: 1px solid #ddd; /* Bordes */
+  text-align: left;
+  color: #555; /* Color del texto */
+}
+
+/* Filas alternadas */
+table tr:nth-child(even) {
+  background-color: #f2f2f2; /* Fondo gris claro */
+}
+
+/* Efecto hover en las filas */
+table tr:hover {
+  background-color: #e6f7ff; /* Fondo azul claro */
+}
+/* Estilo para las celdas de la tabla */
+table tbody tr td {
+  background-color: white; /* Fondo blanco */
+  font-weight: bold; /* Texto en negrita */
+  color: black; /* Color del texto */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde de las celdas */
+}
+
+/* Estilo para las celdas del encabezado */
+table thead tr th {
+  background-color: #007bff; /* Fondo azul */
+  color: white; /* Texto blanco */
+  padding: 10px; /* Espaciado interno */
+  border: 1px solid #ddd; /* Borde de las celdas */
+}

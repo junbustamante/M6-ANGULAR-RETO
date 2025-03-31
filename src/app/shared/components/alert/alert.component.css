@@ -1,0 +1,13 @@
+#warning-new-application{
+    background-color: #fdda24;
+    padding: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    cursor: pointer;
+    text-decoration: none; 
+    color: inherit; 
+}

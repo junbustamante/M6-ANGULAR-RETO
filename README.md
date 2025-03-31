@@ -1,42 +1,27 @@
+# SistemaBancario
 
-# M6-ANGULAR-RETO
-# Reto: Aplicación de Gestión de Cuentas Bancarias con Angular
-> **Larry M. Ramírez - Coach Técnico**
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
 
-> **Jacobo Garcés - Coach Técnico**
+## Development server
 
-## Objetivo.
-Crear una aplicación Angular 16 que sirva como portal de usuario para el sistema de gestión de cuentas bancarias. La aplicación debe consumir el servicio de back-end (desarrollado en el módulo Spring Boot) para mostrar y actualizar la información de las cuentas, permitiendo a los usuarios consultar saldos, ver el historial de transacciones y realizar operaciones bancarias.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Requerimientos Principales
-1. **Autenticación y Protección de Rutas:**
--   Implementar un sistema de autenticación básico (puede ser simulado) que permita el login de usuarios.
--   Proteger rutas sensibles usando **route guards** para que solo usuarios autenticados puedan acceder a ciertas secciones (por ejemplo, consulta de cuentas y transacciones).
+## Code scaffolding
 
-2. **Modularización y Rutas:**
--   Organizar la aplicación en módulos funcionales, por ejemplo:
-    -   **DashboardModule:** Vista general con información resumida.
-    -   **CuentasModule:** Módulo para consultar y gestionar cuentas.
-    -   **TransaccionesModule:** Módulo para visualizar el historial y realizar operaciones (depósitos, retiros, etc.).
--   Configurar **Lazy Loading** para cargar módulos de forma diferida y optimizar el rendimiento.
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-3. **Interfaz de Usuario:**
--   Defiinir una **landing page** que sirva como punto de acceso principal a la aplicación.
--   Crear componentes reutilizables para mostrar información clave, como:
-    -   Tarjetas o "cards" para representar el estado de una cuenta.
-    -   Listados de transacciones.
-    -   Formularios de operación (depósito, retiro) con **formularios reactivos** y validaciones.
--   Utilizar **directivas**  y **pipes**  para mejorar la presentación de los datos.
+## Build
 
-4. **Consumo de APIs REST:**
--   Utilizar el **HTTPClient** para consumir los endpoints del back-end, integrando:
-    -   Consulta del saldo de la cuenta.
-    -   Registro de operaciones (depósitos, retiros, etc.).
-    -   Obtención del historial de las últimas 5 transacciones.
--   Gestionar errores en la comunicación con la API y mostrar mensajes de error adecuados.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-5. **Gestión de Estado Global:**
--   Implementar un mecanismo para gestionar el estado de autenticación y los datos de la cuenta a lo largo de la aplicación.
--   Permitir que, al actualizar una operación, la información se refleje inmediatamente en la interfaz.
+## Running unit tests
 
-**Nota:** este reto debe entregarse por medio de una presentación de máximo 5 minutos durante la sesión del dia 27 de marzo de 2025. Como es costumbre, es necesario el un Pull Request correspondiente desde el repositorio Fork hacia la rama main del repositorio del reto.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
